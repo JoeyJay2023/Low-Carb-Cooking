@@ -67,10 +67,11 @@ Always be warm friendly and practical. Pure Via sweeteners always in stock. User
     };
 
   } catch (error) {
+    console.log('Error:', error.message, error.stack);
     return {
       statusCode: 500,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({ error: error.message, stack: error.stack })
     };
   }
 };
